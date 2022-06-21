@@ -28,9 +28,10 @@
   flex-grow: 1;
 }
 
-.title a {
+.title {
   color: #0070f3;
   text-decoration: none;
+  margin-bottom: 50px !important;
 }
 
 .title a:hover,
@@ -70,6 +71,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column;
   max-width: 800px;
 }
 
@@ -82,14 +84,18 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  width: 500px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
-.card:hover,
 .card:focus,
 .card:active {
   color: #0070f3;
   border-color: #0070f3;
+  .hide{display: block;}
 }
 
 .card h2 {
@@ -113,4 +119,16 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+
+.hide {
+  display: none;
+}
+
+
+.card:hover{
+  color: #0070f3;
+  border-color: #0070f3;
+  .hide{display: block;}
 }
