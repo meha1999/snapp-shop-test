@@ -11,7 +11,7 @@ yarn dev
 ```
 ## Warning
 
-If you want to use  ```npm start```  make sure to run  ```next build```  first
+If you want to use  ```npm start```  make sure to run  ```npm run build```  first
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
