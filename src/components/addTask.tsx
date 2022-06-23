@@ -18,12 +18,14 @@ const AddTask: React.FC = () => {
     reset();
   };
 
-  useEffect(() => {
-    errors.task&&toast.error(`Is ${errors?.task?.type}`);
-  }, [errors]);
+  const onError = () => {
+    toast.error(
+      `Is ${errors?.task?.type} ${errors?.task?.type === "minLength" ? 3 : ""}`
+    );
+  };
 
   return (
-    <form className="add-task" onSubmit={handleSubmit(onSubmit)}>
+    <form className="add-task" onSubmit={handleSubmit(onSubmit, onError)}>
       <input
         className="input"
         placeholder="What needs to be done?"

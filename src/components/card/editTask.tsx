@@ -30,12 +30,14 @@ const EditTask: React.FC<EditTaskProps> = ({ item }) => {
     dispatch(setActiveEditCard(null));
   };
 
-  useEffect(() => {
-    errors.editTask && toast.error(`Is ${errors?.editTask?.type}`);
-  }, [errors]);
+  const onError = () => {
+    toast.error(
+      `Is ${errors?.editTask?.type} ${errors?.editTask?.type === "minLength" ? 3 : ''}`
+    );
+  };
 
   return (
-    <form onSubmit={handleSubmit((data) => onEdit(data, item))}>
+    <form onSubmit={handleSubmit((data) => onEdit(data, item), onError)}>
       <input
         className="edit-input"
         defaultValue={item.title}
