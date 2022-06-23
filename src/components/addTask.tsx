@@ -1,8 +1,8 @@
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { FieldValues, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useDispatch } from "react-redux";
-import { addTask } from "../store/slices/taskSlice";
+import { addTask } from "store/slices/taskSlice";
 
 const AddTask: React.FC = () => {
   const {

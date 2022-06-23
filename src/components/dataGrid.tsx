@@ -1,7 +1,7 @@
 import { Key, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { getTasks, setPageSize, fetchTasks } from "../store/slices/taskSlice";
+import { getTasks, setPageSize, fetchTasks } from "store/slices/taskSlice";
 import Card from "./card";
 
 const DataGrid: React.FC = () => {

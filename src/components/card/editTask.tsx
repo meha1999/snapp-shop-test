@@ -1,12 +1,12 @@
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { FieldValues, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import {
   updateTask,
   setScrollPosition,
   setActiveEditCard,
-} from "../store/slices/taskSlice";
-import { useEffect } from "react";
-import toast from "react-hot-toast";
+} from "store/slices/taskSlice";
 
 interface EditTaskProps {
   item: any;

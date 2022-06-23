@@ -1,7 +1,7 @@
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { getTasks, deleteTask, fetchTasks } from "../store/slices/taskSlice";
+import { getTasks, deleteTask, fetchTasks } from "store/slices/taskSlice";
 
 const Footer: React.FC = () => {
   const router = useRouter();

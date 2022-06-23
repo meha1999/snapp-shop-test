@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import apiInstance from "../../api/serverConfig";
 import toast from "react-hot-toast";
+import apiInstance from "api/serverConfig";
 
 export const fetchTasks: any = createAsyncThunk(
   "tasks",

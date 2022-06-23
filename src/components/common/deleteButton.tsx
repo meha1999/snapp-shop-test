@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { deleteTask, setScrollPosition } from "../../store/slices/taskSlice";
+import { deleteTask, setScrollPosition } from "store/slices/taskSlice";
 
 interface DeleteButtonProps {
   id: number;

@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import {
   updateTaskStatus,
   setScrollPosition,
-} from "../../store/slices/taskSlice";
+} from "store/slices/taskSlice";
 
 interface CheckBoxProps {
   item: any;

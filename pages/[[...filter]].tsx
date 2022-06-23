@@ -3,12 +3,12 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setIsActive, fetchTasks } from "../src/store/slices/taskSlice";
-import AddTask from "../src/components/addTask";
-import DataGrid from "../src/components/dataGrid";
-import Footer from "../src/components/footer";
+import { setIsActive, fetchTasks } from "store/slices/taskSlice";
+import AddTask from "components/addTask";
+import DataGrid from "components/dataGrid";
+import Footer from "components/footer";
 import { Toaster } from "react-hot-toast";
-import Loader from "../src/components/common/loader";
+import Loader from "components/common/loader";
 
 const Home: NextPage = () => {
   const router = useRouter();

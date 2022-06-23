@@ -1,9 +1,8 @@
 import { Key } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTasks, setActiveEditCard } from "../store/slices/taskSlice";
-import CheckBox from "./common/checkBox";
-
-import DeleteButton from "./common/deleteButton";
+import { getTasks, setActiveEditCard } from "store/slices/taskSlice";
+import CheckBox from "components/common/checkBox";
+import DeleteButton from "components/common/deleteButton";
 import EditTask from "./editTask";
 
 interface CardProps {
