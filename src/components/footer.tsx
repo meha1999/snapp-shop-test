@@ -40,7 +40,12 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="clearBtn">
-        <button onClick={handleClearCompleted}>Clear Completed</button>
+        <button
+          disabled={!data.some((item: { done: boolean }) => item.done)}
+          onClick={handleClearCompleted}
+        >
+          Clear Completed
+        </button>
       </div>
     </div>
   );
