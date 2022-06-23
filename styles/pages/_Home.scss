@@ -13,6 +13,7 @@
     color: $primary_color;
     text-decoration: none;
     margin-bottom: 50px !important;
+    text-align: center;
   }
   .container {
     padding: 0;
@@ -23,8 +24,9 @@
     width: 500px;
     border-top: $primary_color solid 15px;
 
-    @media (max-width: 600px) {
-      width: 250px;
+    @include media(sm) {
+      width: auto;
+      max-width: 300px;
     }
     .content {
       box-shadow: -1px 0px 7px 1px$light_grey_color;
@@ -58,7 +60,6 @@
           flex-direction: column;
           .card {
             padding: 1rem 0;
-            text-align: left;
             color: inherit;
             text-decoration: none;
             border: 1px solid $grey_color;
@@ -69,6 +70,7 @@
             flex-direction: row;
             .checkBox {
               margin: 0 20px;
+              align-self: center;
             }
             .edit-input {
               width: 80%;
@@ -85,11 +87,14 @@
             }
             .text {
               width: 100%;
-              text-align: center;
+              word-wrap: break-word;
+              overflow: hidden;
+              margin-right: 20px;
             }
             .btn {
               display: none;
               margin-right: 20px;
+              align-self: center;
               cursor: pointer;
             }
           }
@@ -110,37 +115,37 @@
       flex-direction: row;
       background-color: $light_grey_color;
       border-radius: 3px;
-      .block {
-        padding: 5px;
-        cursor: pointer;
+      @include media(sm) {
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px 0;
+      }
+      .filters {
+        display: flex;
+        @include media(sm) {
+          justify-content: center;
+        }
+        .block {
+          padding: 5px;
+          cursor: pointer;
+        }
       }
       .counter {
         align-self: center;
         margin-left: 20px;
+        @include media(sm) {
+          margin: 0;
+        }
       }
       .clearBtn {
         margin-right: 20px;
         align-self: center;
+        @include media(sm) {
+          margin: 0;
+        }
       }
       .bold {
         font-weight: bold;
-      }
-    }
-  }
-  .loader {
-    border: 12px solid $grey_color;
-    border-top: 12px solid $primary_color;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 1.5s linear infinite;
-    margin-bottom: 50px;
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
       }
     }
   }

@@ -7,6 +7,8 @@ import { setIsActive, fetchTasks } from "../src/store/slices/taskSlice";
 import AddTask from "../src/components/addTask";
 import DataGrid from "../src/components/dataGrid";
 import Footer from "../src/components/footer";
+import { Toaster } from "react-hot-toast";
+import Loader from "../src/components/common/loader";
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -24,18 +26,24 @@ const Home: NextPage = () => {
       <Head>
         <title>Snapp Shop Test App</title>
         <meta name="description" content="Snapp Shop Test App" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <main className={"main"}>
         <h1 className={"title"}>ToDo APP</h1>
         <div className="container">
           <div className="content">
             <AddTask />
-            <DataGrid />
+            <Loader component={<DataGrid />} />
           </div>
           <Footer />
         </div>
       </main>
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          duration: 5000,
+        }}
+      />
     </div>
   );
 };

@@ -1,13 +1,13 @@
-import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getTasks, deleteTask, fetchTasks } from "../store/slices/taskSlice";
 
-const Footer: NextPage = () => {
+const Footer: React.FC = () => {
   const router = useRouter();
   const { data, isActive } = useSelector(getTasks);
   const [countLeft, setCountLeft] = useState<number>(0);
+
   const dispatch = useDispatch();
   useEffect(() => {
     const count = data.filter((item: { done: boolean }) => !item.done);
@@ -16,8 +16,8 @@ const Footer: NextPage = () => {
 
   const handleClearCompleted = () => {
     const completed = data.filter((item: { done: boolean }) => item.done);
-    completed.map( (item: { id: any }) => {
-       dispatch(deleteTask({ id: item.id, multiDelete: true }));
+    completed.map((item: { id: any }) => {
+      dispatch(deleteTask({ id: item.id, multiDelete: true }));
     });
     dispatch(fetchTasks());
   };
@@ -25,7 +25,7 @@ const Footer: NextPage = () => {
   return (
     <div className="options">
       <div className="counter">{`${countLeft} items left`}</div>
-      <div className="d-flex">
+      <div className="filters">
         <div
           className={`block ${!isActive && "bold"}`}
           onClick={() => router.push("/")}
